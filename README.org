@@ -1,0 +1,40 @@
+* JSON2XML
+
+JSON2XML is a tool that can convert JSON to XML
+
+* Usage
+
+#+BEGIN_SRC shell
+python json2xml.py t.json
+#+END_SRC
+
+Will convert:
+#+BEGIN_SRC
+{
+    "description" : "An imaginary server config file",
+    "logs" : {"level":"verbose", "dir":"/var/log"},
+    "host" : "antlr.org",
+    "admin": ["parrt", "tombu"],
+    "aliases": [12, true, false]
+}
+#+END_SRC
+
+to
+
+#+BEGIN_SRC
+<description>An imaginary server config file</description>
+<logs>
+<level>verbose</level>
+<dir>/var/log</dir>
+</logs>
+<host>antlr.org</host>
+<admin>
+<element>parrt</element>
+<element>tombu</element>
+</admin>
+<aliases>
+<element>12</element>
+<element>true</element>
+<element>false</element>
+</aliases>
+#+END_SRC
